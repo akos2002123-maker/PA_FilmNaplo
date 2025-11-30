@@ -1,0 +1,71 @@
+-FilmNapló (PÁ beadandó)
+Név:Pál Ákos
+Neptun-kód:D7FR1T
+-Feladat leírása
+A beadandó feladat egy grafikus FilmNapló alkalmazás elkészítése.
+A felhasználó filmeket vehet fel cím, értékelés (1–10 között) és dátum megadásával.
+A program listában megjeleníti a felvett filmeket, kiszámítja az átlagos értékelést,
+lehetőséget ad a kijelölt film törlésére, véletlenszerű ajánlásra,
+valamint a filmek fájlba mentésére és betöltésére.
+
+- Beépített modulok
+
+- `tkinter`
+A program grafikus felülete:
+- `Tk`, `Frame`, `Label`, `Entry`, `Button`, `Listbox`
+- eseménykezelés (`command`, `bind`)
+- `messagebox` (`showerror`, `showinfo`)
+
+- `datetime`
+Használt függvények:
+- `datetime.date.today()`
+- `datetime.datetime.strptime()`
+- `date.strftime()`
+
+- `random`
+Használt függvény:
+- `random.choice()`
+
+- Saját modul
+ `pá_modul.py`
+- Saját osztály: `PÁFilm`
+- Saját osztály: `PÁApp`
+- Saját függvény: `pá_atlag_ertekeles(filmek)`
+
+-Osztályok
+
+ `PÁFilm`
+A film adatait tárolja (cím, értékelés, dátum).
+Metódus:
+- `szoveg()` – formázott, megjeleníthető szöveget ad vissza.
+
+`PÁApp`
+A fő grafikus alkalmazás osztálya.
+Feladatai:
+- film felvétele
+- film törlése
+- átlag kiszámítása (`pá_atlag_ertekeles`)
+- véletlenszerű film ajánlása
+- dupla kattintásra részletek mutatása
+- fájlba mentés (`mentes_fajlba`)
+- fájlból betöltés (`betoltes_fajlbol`)
+
+-Program felépítése
+
+-Indítás:
+`main.py`
+
+-Alapablak változó:
+`root`
+
+-Programnév (ablak címe):
+`app`
+
+- A program indulása:
+1. `root = tk.Tk()` — főablak létrejötte
+2. `PÁApp(root)` — GUI felépítése
+3. `root.mainloop()` — eseménykezelő ciklus elindítása
+
+-Extra funkciók (választható rész)
+- Filmek mentése `filmek.txt` fájlba
+- Filmek betöltése `filmek.txt` fájlból
